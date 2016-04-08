@@ -1,0 +1,226 @@
+ <form name='myForm' >
+<div  align="center">
+
+<div>
+  <h1 style="height: 50px;color:#0080ff;align:center"> New Bottle Entery Form</h1>
+ 
+</div>
+</div>
+		<table>
+		<tr><td><label>Bottle Number*:</label></td>
+			<td><input type="text" ng-model="create.battleName" id=buttolenumbertxt required>
+			<font color="#0080ff" >Not case sensitive.</font><td>
+			<!-- <p ng-show="create.battleName.$invalid && !create.battleName.$pristine" class="help-block">You name is required.</p> -->
+       </tr>
+      
+       <tr><td><label>Description(compound name)*:</label></td>
+			<td><input ng-model="create.description" id=descriptiontxt required></td>
+       </tr>
+       <tr><td><label>Owner's Sample/Notebook ID*:</label></td>
+			<td><input id=descriptiontxt ng-model="create.sampleID" required></td>
+       </tr>
+       <tr><td><label>Code(if applicable):</label></td>
+			<td><input id=codetxt type="number" ng-model="create.code"/>
+			 <font color="#0080ff">Maretial Type:
+				<!-- <select id="selectStyle">
+			     <option ng-repeat="types in materialTypes" value="{{types.maretialId}}">{{types.maretialName}}</option>
+	        	</select> -->
+	        	<select id="selectStyle" 
+	        	      ng-model='create.maretialId' 
+	        	      ng-options='types.maretialId as types.maretialName for types in maretialTypeList' >
+	        	      <option value="">-- Chose Maretial Type --</option>
+	        	      </select>
+	        	</td>
+		</tr>
+       <tr><td><label>Tare*:</label></td>
+			<td><input type="number" id="taretxt" ng-model="create.tare" required>
+			 <!-- <select id="selectStyle">
+			     <option ng-repeat="types in tareTypeList" value="{{types.tareId}}">{{types.tareName}}</option>
+	        	</select> -->
+	        	<select id="selectStyle" 
+	        	      ng-model='create.tareId' 
+	        	      ng-options='types.tareId as types.tareName for types in tareTypeList' required>
+	        	      <option value="">-- Chose Tare --</option>
+	        	      </select><font color="#0080ff" >(units)</font>
+	       </tr><tr><td></td><td><font color="#0080ff">Enter "0" for Tare, If the units are Container, Tote,Bin,
+	      			Capsules, Lollypops Tablets, Liters or mL,etc.</font></td></tr>
+       <tr><td><label>DEA Registration*:</label></td>
+			<td>
+			
+			<!-- <select id="selectStyle"> 
+			     <option ng-repeat="types in deaRegistrationList" value="types.deaRegistrationId" ng-model="create.deaRegistration"
+			      ng-change="myFunctionForDeterminingWhetherValueIsSelected()" 
+	        	      selected="types.deaRegistrationName">{{types.deaRegistrationName}}</option>
+	        	</select> -->
+	        	<!-- <select id="selectStyle" 
+	        	ng-model="create.deaRegistration" ng-change="whetherValueIsSelected()" 
+	        	      ng-init="create.deaRegistration = someInitFunc()" >
+	        	       <option ng-repeat="types in deaRegistrationList" value="{{types.deaRegistrationId}}">{{types.deaRegistrationName}}</option>
+	        	        
+	        	      </select>	  -->       	      
+	        	 <select id="selectStyle" 
+	        	      ng-model='create.deaRegistrationId' 
+	        	      ng-options='types.deaRegistrationId as types.deaRegistrationName for types in deaRegistrationList' required>
+	        	      <option value="">-- Chose Registration --</option>
+	        	      </select>     
+	        	      
+	        	</td>
+       </tr>
+       <tr><td><label>DEA Schedule*:</label></td>
+			<td><!-- <select id="selectStyle">
+			     <option ng-repeat="types in deaScheduleList" value="{{types.deaScheduleId}}">{{types.deaScheduleName}}</option>
+	        	</select>
+	        	 -->
+	        	 <select id="selectStyle" 
+	        	      ng-model='create.deaScheduleId' 
+	        	      ng-options='types.deaScheduleId as types.deaScheduleName for types in deaScheduleList' required>
+	        	      <option value="">-- Chose Schedule --</option>
+	        	      </select>
+	        	 </td>
+       </tr>
+       <tr><td><label>Belongs to another Inventory:</label></td>
+			<td><input type="checkbox" ng-model="create.inventory"><lable id="selectStyle">(No) (Vault Inventory)</lable></td>
+       </tr><tr><td><label>Owner:</label></td>
+			<td><!-- <select id="selectStyle">
+			     <option ng-repeat="types in ownersList" value="{{types.ownerId}}">{{types.ownerName}}</option>
+	        	</select>
+	        	 -->
+	        	  <select id="selectStyle" 
+	        	      ng-model='create.ownerId' 
+	        	      ng-options='types.ownerId as types.ownerName for types in ownersList'>
+	        	      </select>
+	        	 </td>
+       </tr>
+       <tr><td><label>Disposition*:</label></td>
+			<td><!-- <select id="selectStyle">
+			     <option ng-repeat="types in dispositionList" value="{{types.dispositionId}}">{{types.dispositionName}}</option>
+	        	</select>
+	        	 -->
+	        	  <select id="selectStyle" 
+	        	      ng-model='create.dispositionId' 
+	        	      ng-options='types.dispositionId as types.dispositionName for types in dispositionList' required>
+	        	      <option value="">-- Chose Disposition --</option>
+	        	      </select>
+	        	 
+	        	 </td>
+       </tr>
+       <tr><td><label>Checkout Restriction:</label></td>
+			<td><!-- <select id="selectStyle">
+			     <option  ng-model='create.dispositionId'  ng-repeat="create in checkoutRestrictionList" value="{{create.checkoutRestrictionId}}">{{create.checkoutRestrictionName}}</option>
+	        	</select>
+	        	 -->
+	        	  <select id="selectStyle" 
+	        	      ng-model='create.checkoutRestrictionId' 
+	        	      ng-options='types.checkoutRestrictionId as types.checkoutRestrictionName for types in checkoutRestrictionList'>
+	        	      <option value="">-- Chose Restriction --</option>
+	        	      </select>
+	        	 </td>
+       </tr>
+       <tr><td><label>Content*:</label></td>
+			<td><input id=codetxt type="number" ng-model="create.content" required><font color="#0080ff">Unites*:</font>
+			<!-- <select id="selectStyle">
+			     <option ng-repeat="types in contentUnitesList" value="{{types.contentUnitesId}}">{{types.contentUnitesName}}</option>
+	        	</select> -->
+	        	  <select id="selectStyle" 
+	        	      ng-model='create.contentUnitesId' 
+	        	      ng-options='types.contentUnitesId as types.contentUnitesName for types in contentUnitesList' required>
+	        	      <option value="">-- Chose Content --</option>
+	        	      </select>
+	        	</td>
+       </tr>
+       <tr><td><label>Storage Location:</label></td>
+			<td><!-- <select id="selectStyle">
+			     <option ng-repeat="types in storageLocationList" value="{{types.storageLocationId}}">{{types.storageLocationName}}</option>
+	        	</select> -->
+	        	 <select id="selectStyle" 
+	        	      ng-model='create.storageLocationId' 
+	        	      ng-options='types.storageLocationId as types.storageLocationName for types in storageLocationList'>
+	        	       <option value="">-- Chose Location --</option>
+	        	      </select>
+	        	</td>
+       </tr>
+       <tr><td><label>Comment:</label></td>
+			<td><input type="textarea" ng-model="create.comment" aligh="left" style="textarea;width: 425px; height: 67px"></td>
+       </tr>
+	   
+     
+      <tr><td><td>
+     <!--  <div ng-show="visible" style="color:#0080ff"> 
+ 		<div ng-show="continuePageVisible">
+ 			 <ng:include src="'./html/TranscationNewBottle.html'"></ng:include> 
+ 			 </div>
+		</div>-->
+		
+ 		</td></tr>
+ 		
+ 			<tr><td><center>Initial "In" Transaction for New Bottle</center></td></tr>
+ 		<tr><td><label>Bottle Number*:</label></td>
+			<td><input ng-model="create.battleName" id=buttolenumbertxt ng-readonly="true"></td>
+       </tr>
+       <tr><td><label>Transaction Date*:</label></td>
+       
+			<td><input
+			        type="date"
+			        id="test"
+			        name="birthdate"
+			        ng-model="create.transactionDate"
+			        popup="d MMM yyyy"
+			        options="dateOptions"
+			        opened="opened"
+			        custom-datepicker/></td><td><span class="btn"><i class="icon-calendar"></i></span></td>
+       </tr>
+       <tr><td><label>Customer's NB Ref:</label></td>
+			<td><input id=descriptiontxt ng-model="create.CustomersNBRef"></td>
+       </tr>
+       <tr><td><label>Customer Emp No*:</label></td>
+			<td><!-- <input id=codetxt ng-model="create.customerEmpNo"/> -->
+			 <select id="selectStyle" 
+	        	      ng-model='create.customerEmpNo' 
+	        	      ng-options='types.storageLocationId as types.storageLocationName for types in storageLocationList' required>
+	        	       <option value="">-- Chose Customer Emp No --</option>
+	        	      </select>
+	        	</td>
+		</tr>
+       <tr><td><label>CSS Emp No*:</label></td>
+			<td>
+			<!--  <select id="selectStyle" ng-change="unitChanged()" ng-model="types.tareId">
+			     <option ng-selected="types.tareId" ng-repeat="types in tareTypeList" value="{{types.tareId}}">{{types.tareName}}</option>
+	        	</select> -->
+	        	 <select id="selectStyle" 
+	        	      ng-model='create.storageLocationId' 
+	        	      ng-options='types.storageLocationId as types.storageLocationName for types in storageLocationList' required>
+	        	      <option value="">-- Chose CSS Emp No --</option>
+	        	      </select>
+	       </tr>
+       <tr><td><label>Gross Amount*:</label></td>
+			<td><input ng-model="create.grossAmount" id=grossamount >
+			<label2 id="selectStyle">{{unites}}</label2></td>
+			
+       </tr>
+       <tr><td><label>Transaction Log Ref*:</label></td>
+			<td><input ng-model="create.battleName" id=buttolenumbertxt ng-readonly="true"></td>
+			
+       </tr>
+		
+       <tr><td>  </td></tr>
+       <tr><td>         
+       </td>
+			<td>
+			<div ng-if=create.battleName>
+			<button ng-if="visible" ng-show="visible" ng-click="saveNewBottle(1,create,'Save')" ng-model="create.buttonActionName"> 
+			Save Entries and Close Form </button>				
+			<button type="submit" ng-show="visible" ng-click="createNewBottle(abort)" align="right">Abort</button>				
+			<div ng-if="create.msg" id="message" ng-bind="create.msg">{{create.msg}}</div>
+			</div>
+			<div ng-if=!create.battleName>
+			<button type="button">Save Entries and Close Form</button>	
+			<button type="button">        Abort      </button>	
+			
+			 </div>
+			
+			</td>
+	      </tr>
+       </table>
+ 
+       
+</form>

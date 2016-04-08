@@ -1,0 +1,121 @@
+<form name="myForm">
+
+<table>
+<tr><td></td><td> 
+ 		<font style="height: 50px;color:#0000bb;align:center;font-size: 30px;font-style: inherit;"> 
+ 		Sample Consumption Form
+ 		</font><br>
+ 		Note: Bottles must be logged out before they can be consumed.
+ 		</td></tr>
+	<tr>
+		<td><label>Bottle Number*:</label></td>
+		<td>
+		<select id="selectStyle" name="simpleForm.bottleNumber" ng-model="simpleForm.bottleNumber" required>
+			<option ng-repeat="simpleForm in simpleFormList" value="{{simpleForm.bottleNumber}}" >{{simpleForm.bottleNumber}}</option>
+	     </select>
+	    <span !ng-if="!bottleNumber.length">
+    		<errorlabel class="error" ng-show="myForm.bottleNumber.$error.required"> Required!</errorlabel> </span>
+	     </td>
+	</tr>
+<!-- 	<tr><td></td>
+		<td><tr><td></td><td>Tare:{{s=2000}}</td></tr>
+			<tr><td></td><td>Former Gross: {{s=2000}}</td></tr> -->
+			
+	<tr>
+	
+		<td>	
+		<div ng-hide=simpleForm.basicCheckValue><label> Gross Amount:</label></div>
+		<div ng-show=simpleForm.basicCheckValue><label style="color:#CCCCCC;" >Gross Amount:</label></div>
+		
+		</td>
+		<td >
+		<input ng-hide={{basicCheckValue}} type="number" name="grossAmount" ng-readonly=simpleForm.basicCheckValue
+		 ng-model=grossAmount id=simpleformnumber required>
+		<input id="basicCheck" type="checkbox" ng-model="simpleForm.basicCheckValue" />
+    	<span class="valueItems"><strong>Locked:</strong> {{basicCheckValue}}</span><br />
+		
+    		</td>
+		</tr>
+	
+		
+	<tr><td></td></tr>
+	
+	<tr><td><label>Customer's NB Ref*:</label></td>
+			<td>
+			<input type="number"  ng-model="simpleForm.customerNbRef" id="simpleformtxt" name="customerNbRef" required>
+			<span !ng-if="!customerNbRef.length">
+    		<errorlabel class="error" ng-show="myForm.customerNbRef.$error.required"> Required!</errorlabel> </span>	
+			</td>
+		
+       <tr>
+		<td><label>Customer Emp No*:</label></td>
+		<td>
+		<select id="selectStyle" ng-model="simpleForm.customerEmpNo" name="customerEmpNo" required>
+		     <option ng-repeat="simpleForm in simpleFormList" value="{{simpleForm.bottleNumber}}" >{{simpleForm.bottleNumber}}</option>
+	    </select>
+	    
+	    <span !ng-if="!customerEmpNo.length">
+    		<errorlabel class="error" ng-show="myForm.customerEmpNo.$error.required"> Required!</errorlabel> </span>
+    		</td>
+	</tr>
+	<tr>
+		<td><label>CSS Emp No*:</label></td>
+		<td> 
+		 <select id="selectStyle" ng-model="simpleForm.cssEmpNo" name="cssEmpNo" required>
+		     <option ng-repeat="simpleForm in simpleFormList" value="{{simpleForm.bottleNumber}}">{{simpleForm.bottleNumber}}</option>
+	    </select>
+	     <span !ng-if="!cssEmpNo.length">
+    		<errorlabel class="error" ng-show="myForm.cssEmpNo.$error.required"> Required!</errorlabel> </span>
+	</tr>
+       <tr>
+		<td><label>Transaction Date*:</label></td>
+		<td>
+		<input type="date" id="tdate" name="transactionDate"
+			        ng-model="simpleForm.transactionDate" popup="d MMM yyyy" options="dateOptions"
+			        opened="opened" custom-datepicker required/>
+		<span !ng-if="transactionDate">
+    		<errorlabel class="error" ng-show="myForm.transactionDate.$error.required"> Date Required!</errorlabel> </span>
+		
+		</td>
+	</tr>
+	<tr>
+		<td><label>Transaction Log Ref*:</label></td>
+		<td>
+		<input type="number"  ng-model="simpleForm.transactionLogRef" id="simpleformtxt" name="transactionLogRef" required>
+		<span !ng-if="!transactionLogRef.length">
+    		<errorlabel class="error" ng-show="myForm.transactionLogRef.$error.required"> Required!</errorlabel> </span>
+		
+		</td>
+	</tr>
+	
+	<tr>
+		<td><label>Comment for this tansaction:</label></td>
+		<td><input type="textarea" ng-model="simpleForm.comment" name="comment" aligh="left"
+			style="width: 425px; height: 67px">
+			<input type="hidden" ng-model="simpleForm.actionName" name="actionName"  aligh="left"
+			style="width: 425px; height: 67px"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			 <div ng-if=simpleForm.bottleNumber>
+			
+		<!-- 	<button ng-if="visible" ng-show="visible" ng-click="saveNewBottle(1,simpleForm,'Save')" ng-model="simpleForm.buttonActionName"> 
+			Save Entries and Close Form </button> -->	
+			<button ng-if="visible" ng-show="visible" ng-click="saveFromData('sampleConsumptionForm',simpleForm,'Save')" ng-model="simpleForm.buttonActionName"> 
+			Save and Log Another Consumption</button>
+						
+			<button type="submit" ng-show="visible" ng-click="abort(abort)" align="right">Abort</button>				
+			<div ng-if="simpleForm.msg" id="message" ng-bind="simpleForm.msg">{{simpleForm.msg}}</div>
+			</div>
+			<div ng-if=!simpleForm.bottleNumber>		
+			<button  type="button">Save and Log Another Consumption</button>
+			<button type="button"> Abort</button>	
+			
+			 </div>
+
+		</td>
+	</tr>
+</table>
+
+</form>

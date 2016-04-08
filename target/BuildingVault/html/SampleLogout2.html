@@ -1,0 +1,68 @@
+
+<div>
+	<h1 style="height: 50px; color: #0080ff; align: center" align="center">Sample
+		Logout Form</h1>
+
+</div>
+
+<table>
+	<tr>
+		<td><label>Bottle Number*:</label></td>
+		<td><select style="height: 32px; color: #0080ff"
+			ng-model='create.bottleNumber'
+			ng-options='types.bottleNumber as types.maretialName for types in simpleFormList'>
+		</select></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><label2> Expected Gross:{{s=2000}}<br>
+			Tare:<br>
+			Expected Net: </label2></td>
+	</tr>
+
+	<tr>
+		<td><label>Gross Amount*:</label></td>
+		<td><input ng-model="create.grossAmount" id=descriptiontxt></td>
+	</tr>
+	<tr>
+		<td><label>Transaction Date*:</label></td>
+		<td><input ng-model="create.transactionDate" id=descriptiontxt></td>
+	</tr>
+	<tr>
+		<td><label>Transaction Log Ref*:</label></td>
+		<td><input ng-model="create.transactionLogRef" id=descriptiontxt></td>
+	</tr>
+	<tr>
+		<td><label>Customer Emp No*:</label></td>
+		<td><input id=codetxt ng-model="create.customerEmpNo" /></td>
+	</tr>
+	<tr>
+		<td><label>CSS Emp No*:</label></td>
+		<td><input id=taretxt ng-model="create.cssEmpNo"> <!--  <select style="height: 32px;color:#0080ff" ng-change="unitChanged()" ng-model="types.tareId">
+			     <option ng-selected="types.tareId" ng-repeat="types in tareTypeList" value="{{types.tareId}}">{{types.tareName}}</option>
+	        	</select> --> <select style="height: 32px; color: #0080ff"
+			ng-model='create.storageLocationId'
+			ng-options='types.storageLocationId as types.storageLocationName for types in storageLocationList'>
+		</select>
+	</tr>
+	<tr>
+		<td><label>Comment for this tansaction:</label></td>
+		<td><input type="textarea" ng-model="create.comment" aligh="left"
+			style="width: 425px; height: 67px"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<button ng-if="visible" ng-show="visible"
+				ng-click="continueFunction(0)">Save and Exit</button>
+			<button ng-if="invisible" ng-show="invisible"
+				ng-click="continueFunction(1)">Save and Log Out Another
+				Sample</button>
+			<button type="submit" ng-show="visible"
+				ng-click="createNewBottle(abort)" align="right">Abort</button>
+
+
+
+		</td>
+	</tr>
+</table>

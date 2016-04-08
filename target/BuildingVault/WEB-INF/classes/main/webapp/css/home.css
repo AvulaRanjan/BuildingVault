@@ -1,0 +1,39 @@
+
+
+// For Presentation Only
+body {
+  padding: 3rem 1rem 0;
+  font-family: 'Lato', sans-serif;
+  background: #444;
+}
+
+.presentation {
+  text-align: center;
+  .btn-icon {
+    font-size: 5em;
+    margin: 0 0.5em;
+  }
+}
+
+// Optimize for icon based button
+.btn-icon {
+  padding: 0;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  border-radius: 0;
+  &:active, &:focus {
+    .box-shadow(none);
+    border-color: transparent;
+  }
+  &:active {
+    .scale(0.9);
+  }
+  &:focus {
+    outline: 0 none !important;
+  }
+  .glyphicon {
+    .transition(color 0.1s ease);
+  }
+}

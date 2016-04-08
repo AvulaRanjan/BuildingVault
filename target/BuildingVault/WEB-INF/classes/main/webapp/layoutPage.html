@@ -1,0 +1,64 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script src="angular.min.js"></script>
+<script src="js/app/home.js"></script>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="css/layout.css" rel="stylesheet" type="text/css" />
+<script>
+  
+    angular.element(document).ready(function() {
+      angular.bootstrap(document, ['myapp']);
+    });
+  </script>
+</head>
+<body>
+
+<div  ng-app="myapp">
+<div id="header">
+  <h1> Maillinckodt Pharmaceuticals</h1>
+  <h2>Building  96-1 Vault</h2>
+</div>
+
+<div id="nav">
+<div ng-controller="createNewBottleCtrl">
+<ul>
+   <li ng:repeat="headers in menuheaders" > 
+   
+       <a href="" ng:click="createNewBottle(headers.id,headers.continent)">{{headers.name}}</a> 
+        
+          <!--  <a href="" ng:click="fetchAllUsers(headers.id)">{{headers.name}}</a>
+         -->
+         
+    </li>
+</ul>
+</div>
+ </div>
+
+<div id="section">
+
+<div ng-show="createBottleVisible">
+				<ng:include src="'./html/CreateNewBottle.html'"></ng:include>
+			</div>
+
+<div ng-show="prelogoutVisible">
+				<ng:include src="'./html/PreLogout.html'"></ng:include>
+			</div>
+			
+<div ng-show="sampleLogoutVisible">
+				<ng:include src="'./html/SampleLogout.html'"></ng:include>
+			</div>
+<div ng-show="sampleLoginVisible">
+				<ng:include src="'./html/SampleLogin.html'"></ng:include>
+			</div>
+
+
+</div>
+
+<div id="footer">
+Copyright © W3Schools.com
+</div>
+</div>
+</body>
+</html>

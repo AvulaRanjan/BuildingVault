@@ -1,0 +1,113 @@
+<form name="myForm">
+<table>
+<tr><td></td><td colspan="8"> 
+ 		<font style="height: 50px;color:#0000bb;align:center;font-size: 30px;font-style: inherit;"> Sample Destruction Form<br>
+ 		</font>
+ 		<br>
+ 		Note: 1) Only samples logged into the Vault can be destroyed.<br>
+ 		         2) This form is only use with samples that the CSS is destroyed as <br>
+ 		          part of the DEA COmpliance Group planned destruction.<br>
+ 		      3)Samples destroyed or consumed outside the vault system, for example,<br>
+ 		        by an analyst in a lab, must be entered into the database using the Sample Consumption Form.<br><br>
+ 		</td></tr> 
+	<tr>
+		<td><label>Bottle Number*:</label></td>
+		<td>
+		<select id="selectStyle" name="bottleNumber" ng-model="simpleForm.bottleNumber" required>
+			<option ng-repeat="simpleForm in simpleFormList" value="{{simpleForm.bottleNumber}}" >{{simpleForm.bottleNumber}}</option>
+	     </select>
+	    <span !ng-if="!bottleNumber.length">
+    		<errorlabel class="error" ng-show="myForm.bottleNumber.$error.required"> Required!</errorlabel> </span>
+	     </td>
+	</tr>
+	<tr><td></td>
+		<td><tr><td></td><td>Expected Gross:</td></tr>
+			<tr><td></td><td>Tare:</td></tr>
+			<tr><td></td><td>Expected Net:</td></tr>
+	<tr>
+		<td><label>Gross Amount*:</label></td>
+		<td>
+		<input type="number" name="grossAmount" ng-model="simpleForm.grossAmount" id=simpleformnumber required>
+		<span !ng-if="simpleForm.grossAmount">
+    		<errorlabel class="error" ng-show="myForm.grossAmount.$error.required"> Required number!</errorlabel> </span>
+    		</td>
+		
+	
+		<tr><td></td>
+		<td><tr><td></td><td>Destroying:</td></tr>
+	<tr><td></td></tr>
+	<tr>
+		<td><label>Expected Destr. Date*:</label></td>
+		<td>
+		<input type="date" id="tdate" name="destrDate"
+			        ng-model="simpleForm.destrDate" popup="d MMM yyyy" options="dateOptions"
+			        opened="opened" custom-datepicker required/>
+			        <span>A date in the future when all the sample to be</span> 
+					<span>destroyed are expected to go to the incinerator.
+					</span>
+					<span !ng-if="destrDate">
+					<errorlabel class="error" ng-show="myForm.destrDate.$error.required"> Date Required!</errorlabel> </span>
+		
+		</td>
+	</tr>
+	<tr>
+		<td><label>Transaction Log Ref*:</label></td>
+		<td>
+		<input type="number"  ng-model="simpleForm.transactionLogRef" id="simpleformtxt" name="transactionLogRef" required>
+		<span !ng-if="!transactionLogRef.length">
+    		<errorlabel class="error" ng-show="myForm.transactionLogRef.$error.required"> Required!</errorlabel> </span>
+		
+		</td>
+	</tr>
+	
+	<tr>
+		<td><label>Witness Emp No*:</label></td>
+			<td width="10px"><select id="selectStyle"
+				ng-model="simpleForm.witnessEmpNo" name="witnessEmpNo" required>
+					<option ng-repeat="simpleForm in simpleFormList"
+						value="{{simpleForm.bottleNumber}}">{{simpleForm.bottleNumber}}</option>
+			</select> <span !ng-if="!customerEmpNo.length"> <errorlabel
+						class="error" ng-show="myForm.witnessEmpNo.$error.required">
+					Required!</errorlabel>
+			</span></td>
+	</tr>
+	<tr>
+		<td><label>CSS Emp No*:</label></td>
+		<td> 
+		 <select id="selectStyle" ng-model="simpleForm.cssEmpNo" name="cssEmpNo" required>
+		     <option ng-repeat="simpleForm in simpleFormList" value="{{simpleForm.bottleNumber}}">{{simpleForm.bottleNumber}}</option>
+	    </select>
+	     <span !ng-if="!cssEmpNo.length">
+    		<errorlabel class="error" ng-show="myForm.cssEmpNo.$error.required"> Required!</errorlabel> </span>
+	</tr>
+	<tr>
+		<td><label>Comment for this tansaction:</label></td>
+		<td><input type="textarea" ng-model="simpleForm.comment" name="comment" aligh="left"
+			style="width: 425px; height: 67px">
+			<input type="hidden" ng-model="simpleForm.actionName" name="actionName"  aligh="left"
+			style="width: 425px; height: 67px"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			 <div ng-if=simpleForm.bottleNumber>
+			
+		<!-- 	<button ng-if="visible" ng-show="visible" ng-click="saveNewBottle(1,create,'Save')" ng-model="create.buttonActionName"> 
+			Save Entries and Close Form </button> -->	
+			<button ng-if="visible" ng-show="visible" ng-click="saveNewBottle('simpleformlogin',simpleForm,'Save')" ng-model="create.buttonActionName"> 
+			Save and Log Another Destruction</button>
+						
+			<button type="submit" ng-show="visible" ng-click="abort(abort)" align="right">Abort</button>				
+			<div ng-if="create.msg" id="message" ng-bind="simpleForm.msg">{{create.msg}}</div>
+			</div>
+			<div ng-if=!simpleForm.bottleNumber>		
+			<button  type="button">Save and Log Another Destruction</button>
+			<button type="button"> Abort</button>	
+			
+			 </div>
+
+		</td>
+	</tr>
+</table>
+
+</form>

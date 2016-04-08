@@ -1,0 +1,27 @@
+<form name="form">
+<div class="control-group" ng-class="{true: 'error'}[submitted && form.email.$invalid]">
+        <label class="control-label" for="email">Your email address</label>
+        <div class="controls">
+            <input type="email" name="email" ng-model="email" required />
+            <table>
+		<tr><td><label>Bottle Number*:</label></td>
+			<td><input ng-model="create.battleName" id=buttolenumbertxt required></td><td>
+			 <span class="help-inline" ng-show="submitted && create.battleName.$error.required">Required</span>
+            <span class="help-inline" ng-show="submitted && create.battleName.$error.create.battleName">Invalid email</span>
+           
+       </tr>
+      
+       <tr><td><label>Description(compound name)*:</label></td>
+			<td><input ng-model="create.description" id=descriptiontxt required></td>
+			 <span class="help-inline" ng-show="submitted && create.description.$error.required">Required</span>
+            <span class="help-inline" ng-show="submitted && create.battleNamecreate.description.$error.create.description">Invalid email</span>
+           
+       </tr>
+       </table>
+            
+            
+        </div>
+    </div>
+   
+    <button type="submit" class="btn btn-primary btn-large" ng-click="saveNewBottle(1,create,'Save');" ng-disabled="form.$invalid">Submit</button>
+</form>

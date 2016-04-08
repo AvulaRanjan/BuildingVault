@@ -1,0 +1,178 @@
+
+
+#buttolenumbertxt{		
+	align:left; 
+	width:200px; 
+	height: 25px;
+}
+
+#descriptiontxt{	
+	align:left; 
+	width:400px; 
+	height: 25px;
+}
+#simpleformtxt{	
+	
+	width:200px; 
+	height: 25px;
+}
+#simpleformnumber{	
+	
+	width:200px; 
+	height: 25px;
+}
+#codetxt{	
+	
+align:left; 
+	width:70px; 
+	height: 25px;
+}
+#taretxt{
+	
+	align:left; 
+	width:70px; 
+	height: 25px;
+}
+center {
+    display: block;
+    color:#0000bb;
+    height: 50px;
+    text-align: -webkit-center;
+    
+}
+
+#message{
+color: #0D9826;
+font-size: 20px;
+font-weight: bold;
+}
+
+
+#transactionDatetxt{	
+	
+	align:left; 
+	width:100px; 
+	height: 25px;
+}
+
+#grossamount{	
+	
+	align:left; 
+	width:100px; 
+	height: 25px;
+}
+.icon-calendar{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: text-top;
+    background-image: url("http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/img/glyphicons-halflings.png");
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    margin-top: 1px;
+   
+}
+#selectStyle{
+	height: 32px;
+	color:#0000bb;
+	
+}
+#plaintext{
+	font color:"#0000bb"
+
+}
+table, td, th{
+   
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
+td {
+    text-align: left;
+   /*  color: #0000bb; */
+    
+}
+th1 {
+    text-align: center;
+}
+
+td1 {
+    text-align: center;
+    
+}
+
+
+
+td2 {
+    text-align: right;
+    
+}
+label {
+align:right;
+color: #0000bb;
+font-weight: bold;
+display: block;
+width: 150px;
+float: right;
+}
+
+label1 {
+align:center;
+color: #0000bb;
+font-weight: bold;
+display: block;
+/* width: 150px; */
+float: left;
+}
+button {
+    padding: 6px;
+    background-color: rgba(204, 204, 204, 0.33);
+    font-weight: bold;
+    font-style: inherit;
+    color: #0000bb;
+}
+
+errorlabel {
+    align: right;
+    color: #FF002F;
+    
+    display: block;
+    /* font-weight: bold;
+    width: 150px; */
+    /* float: left; */
+    padding: inherit;
+}
+
+/* 
+
+selectSize {
+    border-radius: 0px;
+    border-color: rgb(169, 169, 169);
+    style:"height: 35px; color:#0000bb;
+}
+ */
+#submenubar {	
+    position: absolute;
+    left: 10px;
+    top: 80px;
+    bottom: 20px;
+    width: 260px;
+    border: solid 1px #CCCCCC;	
+}
+
+
+
+button {
+	padding:6px;
+}
+
+
+.answer { display:none }

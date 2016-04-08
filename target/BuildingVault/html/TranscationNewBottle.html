@@ -1,0 +1,33 @@
+<div>
+<h2><center>Initial "In" Transaction for New Bottle</center></h2>		
+<table>
+		<tr><td><label>Bottle Number*:</label></td>
+			<td><input ng-model="create.battleName" id=buttolenumbertxt></td>
+       </tr>
+       <tr><td><label>Transaction Date*:</label></td>
+			<td><input ng-model="create.transactionDate" id=descriptiontxt ></td>
+       </tr>
+       <tr><td><label>Customer's NB Ref:</label></td>
+			<td><input id=descriptiontxt ng-model="create.CustomersNBRef"></td>
+       </tr>
+       <tr><td><label>Customer Emp No*:</label></td>
+			<td><input id=codetxt ng-model="create.customerEmpNo"/>
+			 
+	        	</td>
+		</tr>
+       <tr><td><label>CSS Emp No*:</label></td>
+			<td><input id=taretxt ng-model="create.cssEmpNo">
+			 <select style="height: 32px;color:#0080ff">
+			     <option ng-repeat="types in tareTypeList" value="{{types.tareId}}">{{types.tareName}}</option>
+	        	</select>
+	       </tr>
+       <tr><td><label>Gross Amount*:</label></td>
+			<td><input ng-model="create.grossAmount" id=descriptiontxt ></td>
+       </tr>
+       <tr><td><label>Transaction Log Ref*:</label></td>
+			<td><input ng-model="create.transactionLogRef" id=descriptiontxt ></td>
+       </tr>
+            
+       </table>
+
+</div>

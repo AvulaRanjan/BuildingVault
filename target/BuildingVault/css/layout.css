@@ -1,0 +1,30 @@
+#header {
+    background-color:white;
+    color:#0000bb;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    /* background-color:#eeeeee; 
+    padding:5px;
+    */
+    color:#0000bb;
+    height:500px;
+    /* width:250px; */
+    float:left;
+    cursor:pointer;
+    	      
+}
+#section {
+    width:250px;
+    float:left;
+    padding:10px;	 	 
+}
+#footer {
+    background-color:#402981;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}

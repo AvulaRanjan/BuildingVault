@@ -1,0 +1,35 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script src="angular.min.js"></script>
+<script src="js/app/home.js"></script> 
+<script src="js/app/validations.js"></script><!-- 
+<script src="js/app/controller/bottleController.js"></script>
+<script src="js/app/service/bottleService.js"></script> -->
+
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="css/layout.css" rel="stylesheet" type="text/css" />
+<script>
+  
+    angular.element(document).ready(function() {
+      angular.bootstrap(document, ['myapp']);
+    });
+  </script>
+</head>
+<body>
+
+<div  ng-app="myapp">
+ <img src="./img/logo.png" alt="Building  96-1 Vault" al="" align="top" width="300" height="100">
+  <!--<div id="header"> <h1 style="height: 50px;color:#0080ff;align:center"> Maillinckodt Pharmaceuticals</h1>
+  <h2 style="height: 50px;color:#0080ff;align:center">Building  96-1 Vault</h2> -->
+			
+		</div>
+<div ng-controller="createNewBottleCtrl" >
+ 	<ng:include src="'./html/Building.html'"></ng:include>
+ </div>
+
+ 
+</div>
+</body>
+</html>

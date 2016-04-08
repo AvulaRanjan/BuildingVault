@@ -1,0 +1,55 @@
+
+<div id="menuheaders">
+<div id="nav">
+   <div id ="headli" ng:repeat="headers in menuheaders" 
+   		ng:click="fetchInitialData(headers.id,headers.continent)">{{headers.name}} </div> 
+   <div ng-show=toShow id ="subheadli" class="" style="color: #0d9826;">
+  		<li ng:repeat="headers in submenuheaders" ng:click="fetchSubmenuInitalData(headers.id,headers.continent)">{{headers.name}}</li></div>
+	 </div>
+
+</div>
+<div id="content">
+    <ng:view>
+
+		<div ng-show="createBottleVisible" id="section">
+			<ng:include src="'./html/CreateNewBottle.html'"></ng:include>
+		</div>
+		<div ng-show="prelogoutVisible" id="section">
+			<ng:include src="'./html/PreLogout.html'"></ng:include>
+		</div>
+		<div ng-show="sampleLogoutVisible" id="section">
+			<ng:include src="'./html/SampleLogout.html'"></ng:include>
+		</div>
+		<div ng-show="sampleLoginVisible" id="section">
+			<ng:include src="'./html/SampleLogin.html'"></ng:include>
+		</div>
+		
+		<div ng-show="destructionFormVisible" id="section">
+			<ng:include src="'./html/SampleDestructionForm.html'"></ng:include>
+		</div>
+			
+		<div ng-show="consumptionFormVisible" id="section">
+			<ng:include src="'./html/SampleConsumptionForm.html'"></ng:include>
+		</div>
+			
+		<div ng-show="transferFormVisible" id="section">
+			<ng:include src="'./html/SampleTransferForm.html'"></ng:include>
+		</div>
+			
+		<div ng-show="deaFormVisible" id="section">
+			<ng:include src="'./html/SampleDestructionForm.html'"></ng:include>
+		</div>
+		
+		<div ng-show="destructiondatesVisible" id="section">
+			<ng:include src="'./html/SampleTransferForm.html'"></ng:include>
+		</div>
+		
+	</ng:view>
+	</div>		
+			
+<div id="footer">
+Copyright © Miraclesoft.com
+</div>
+
+
+			

@@ -1,0 +1,148 @@
+<form name="formData">
+<div align="center">
+
+<div>
+  <h1 style="height: 50px;color:#0080ff;align:center"> New Bottle Entery Form</h1>
+ 
+</div>
+
+		<table>
+		<tr><td><label>Bottle Number*:</label></td>
+			<td><input ng-model="battleName" id=create.buttolenumbertxt ></td>
+       </tr>
+      
+       <tr><td><label>Description(compound name)*:</label></td>
+			<td><input ng-model="create.description" id=descriptiontxt ></td>
+       </tr>
+       <tr><td><label>Owner's Sample/Notebook ID*:</label></td>
+			<td><input id=descriptiontxt ng-model="create.sampleID"></td>
+       </tr>
+       <tr><td><label>Code(if applicable):</label></td>
+			<td><input id=codetxt ng-model="create.code"/>
+			 <font color="#0080ff">Maretial Type:
+				<select style="height: 32px;color:#0080ff">
+			     <option ng-repeat="types in materialTypes" value="{{types.maretialId}}">{{types.maretialName}}</option>
+	        	</select>
+	        	</td>
+		</tr>
+       <tr><td><label>Tare*:</label></td>
+			<td><input id=taretxt ng-model="create.tare">
+			 <select style="height: 32px;color:#0080ff">
+			     <option ng-repeat="types in tareTypeList" value="{{types.tareId}}">{{types.tareName}}</option>
+	        	</select>
+	       </tr>
+       <tr><td><label>DEA Registration*:</label></td>
+			<td>
+			<!-- <select style="height: 32px;color:#0080ff"> 
+			     <option ng-repeat="types in deaRegistrationList" value="{{types.deaRegistrationId}}" ng-model="create.deaRegistration"
+			      ng-change="myFunctionForDeterminingWhetherValueIsSelected()" 
+	        	      ng-init="create.deaRegistration = someInitFunc(types.deaRegistrationId)>{{types.deaRegistrationName}}</option>
+	        	</select>-->
+	        	<select style="height: 32px;color:#0080ff" 
+	        	ng-model="create.deaRegistration"   ng-change="myFunctionForDeterminingWhetherValueIsSelected()" 
+	        	      ng-init="create.deaRegistration = someInitFunc(types.deaRegistrationId)" ><option value="">--Please Select-- </option>
+	        	       <option ng-repeat="types in deaRegistrationList" value="{{types.deaRegistrationId}}">{{types.deaRegistrationName}}</option>
+	        	        
+	        	      </select>
+	        	</td>
+       </tr>
+       <tr><td><label>DEA Schedule*:</label></td>
+			<td><select style="height: 32px;color:#0080ff">
+			     <option ng-repeat="types in deaScheduleList" value="{{types.deaScheduleId}}">{{types.deaScheduleName}}</option>
+	        	</select>
+	        	</td>
+       </tr>
+       <tr><td><label>Belongs to another Inventory:</label></td>
+			<td><input type="checkbox" ng-model="user.firstName"><lable style="height: 32px;color:#0080ff">(No) (Vault Inventory)</lable></td>
+       </tr><tr><td><label>Owner:</label></td>
+			<td><select style="height: 32px;color:#0080ff">
+			     <option ng-repeat="types in ownersList" value="{{types.ownerId}}">{{types.ownerName}}</option>
+	        	</select>
+	        	</td>
+       </tr>
+       <tr><td><label>Disposition*:</label></td>
+			<td><select style="height: 32px;color:#0080ff">
+			     <option ng-repeat="types in dispositionList" value="{{types.dispositionId}}">{{types.dispositionName}}</option>
+	        	</select>
+	        	</td>
+       </tr>
+       <tr><td><label>Checkout Restriction:</label></td>
+			<td><select style="height: 32px;color:#0080ff">
+			     <option ng-repeat="types in checkoutRestrictionList" value="{{types.checkoutRestrictionId}}">{{types.checkoutRestrictionName}}</option>
+	        	</select>
+	        	</td>
+       </tr>
+       <tr><td><label>Content*:</label></td>
+			<td><input id=codetxt ng-model="create.content"><font color="#0080ff">Unites*:
+			<select style="height: 32px;color:#0080ff">
+			     <option ng-repeat="types in contentUnitesList" value="{{types.contentUnitesId}}">{{types.contentUnitesName}}</option>
+	        	</select>
+	        	</td>
+       </tr>
+       <tr><td><label>Storage Location:</label></td>
+			<td><select style="height: 32px;color:#0080ff">
+			     <option ng-repeat="types in storageLocationList" value="{{types.storageLocationId}}">{{types.storageLocationName}}</option>
+	        	</select>
+	        	</td>
+       </tr>
+       <tr><td><label>Comment:</label></td>
+			<td><input type="textarea" ng-model="user.firstName" aligh="left" style="textarea;width: 425px; height: 67px"></td>
+       </tr>
+	   
+     
+      <tr><td><td>
+     <!--  <div ng-show="visible" style="color:#0080ff"> 
+ 		<div ng-show="continuePageVisible">
+ 			 <ng:include src="'./html/TranscationNewBottle.html'"></ng:include> 
+ 			 </div>
+		</div>-->
+		
+ 		</td></tr>
+ 		
+ 			<tr><td><center>Initial "In" Transaction for New Bottle</center></td></tr>
+ 		<tr><td><label>Bottle Number*:</label></td>
+			<td><input ng-model="battleName" id=buttolenumbertxt ng-readonly="true"></td>
+       </tr>
+       <tr><td><label>Transaction Date*:</label></td>
+			<td><input ng-model="create.transactionDate" id=descriptiontxt ></td>
+       </tr>
+       <tr><td><label>Customer's NB Ref:</label></td>
+			<td><input id=descriptiontxt ng-model="create.CustomersNBRef"></td>
+       </tr>
+       <tr><td><label>Customer Emp No*:</label></td>
+			<td><input id=codetxt ng-model="create.customerEmpNo"/>
+			 
+	        	</td>
+		</tr>
+       <tr><td><label>CSS Emp No*:</label></td>
+			<td><input id=taretxt ng-model="create.cssEmpNo">
+			 <select style="height: 32px;color:#0080ff" ng-change="unitChanged()" ng-model="types.tareId">
+			     <option ng-selected="types.tareId" ng-repeat="types in tareTypeList" value="{{types.tareId}}">{{types.tareName}}</option>
+	        	</select>
+	       </tr>
+       <tr><td><label>Gross Amount*:</label></td>
+			<td><input ng-model="create.grossAmount" id=descriptiontxt ></td>
+       </tr>
+       <tr><td><label>Transaction Log Ref*:</label></td>
+			<td><input ng-model="create.transactionLogRef" id=descriptiontxt ></td>
+       </tr>
+		
+       
+       <tr><td>         
+       </td>
+			<td>
+			<button ng-if="visible" ng-show="visible" ng-click="continueFunction(0)">          Continue      </button>			
+  			<button ng-if="invisible" ng-show="invisible" ng-click="continueFunction(1)">Hide Transaction Page</button> 			
+			<button type="submit" ng-show="visible" ng-click="createNewBottle(abort)" align="right">Abort</button>
+			<button ng-if="visible" ng-show="visible" ng-click="saveNewBottle(1,create,types)">          Save      </button>	
+			
+			
+			
+			</td>
+	      </tr>
+       </table>
+ 
+       
+</div>
+</form>
+

@@ -1,0 +1,88 @@
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:150px;
+    float:left;
+    padding:5px;	      
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px;	 	 
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+
+table {
+  border: 1px solid #666;   
+    width: 100%;
+}
+th {
+  background: #f8f8f8; 
+  font-weight: bold;    
+    padding: 2px;
+}
+
+
+/* Scholl */
+
+
+#bodybackground {  
+  background-color:#cfebfc
+}
+
+#menu {
+  list-style:none;
+  padding:0;
+  text-align:center;
+ 
+}
+
+.link {
+  display:inline-block;
+  width:24%;
+  vertical-align:top;
+  position:relative;
+}
+
+.linkName {
+  padding:10px 5px;
+  text-decoration:none;
+  color:black;
+  display:block;
+  cursor:pointer;
+}
+
+.linkName:hover, .highlight {
+  background-color:lightgray;
+}
+
+.submenu {
+  width:99.5%;
+  padding:0;
+  list-style:none;
+  border-left:1px solid black;
+  border-right:1px solid black;
+  border-bottom:1px solid black;
+  text-align:left;
+  display:none;
+  position:absolute;
+  background-color:white;
+}
+
+.sublink {
+  margin:7px 10px;
+  cursor:pointer;
+}
