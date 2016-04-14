@@ -107,6 +107,14 @@
                 <executable>C:\Program Files\Java\jdk1.8.0_73\bin\javac.exe</executable>
         </configuration>
         </plugin>
+         <plugin>       
+      <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>[2.0.1,)</version>
+            <goals>
+              <goal>war</goal>
+            </goals>
+            </plugin>
          <plugin>
         <artifactId>tomcat-war-plugin</artifactId>
         <version>2.6</version>
